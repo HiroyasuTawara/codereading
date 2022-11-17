@@ -249,6 +249,8 @@ ja:
       invite_team_member: 'チームメンバー招待'
       team_leader: 'チームリーダー'
       leader: 'リーダー'
+      views.messages.owner_assign_success: 'リーダー権限を譲渡しました！'
+      views.messages.owner_assign_failed: 'リーダー権限の譲渡に失敗しました！'
       invitation_placeholder: '招待したい人のメールアドレスを入力してください'
       edit_profile: 'プロフィールを編集'
       team_you_belong_to: '所属しているチーム'
@@ -259,6 +261,7 @@ ja:
       delete: '削除'
       create: '作成'
       invite: '招待'
+      assign: '権限移動'
     top:
       line1: 'このアプリケーションは、チームごと、議題ごとに別れて'
       line2: '特定のイシュー（議題）をメンバーで見やすく共有するためのアプリケーションです'
