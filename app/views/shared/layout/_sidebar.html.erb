@@ -30,7 +30,7 @@
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         <% @working_team.agendas.each do |agenda| %>
           <li class="nav-item has-treeview menu-open">
-            <a href="#" class="nav-link">
+            <a href="#" class="nav-link nav-fill">
               <i class="fa fa-circle-o nav-icon"></i>
               <p>
                 <%= agenda.title %>
@@ -50,10 +50,18 @@
                   <p>+ <%= I18n.t('views.messages.create_article') %></p>
                 <% end %>
               </li>
+              <% if agenda.user_id == current_user.id || agenda.team.owner_id == current_user.id %>
+                <li class="nav-item">
+                  <p>
+                    <%= link_to "- アジェンダを削除する", agenda_path(agenda.id), method: :delete, class:"text-danger nav-link", data: { confirm: 'アジェンダを削除してよろしいですか？'} %>
+                  </p>
+                </li>
+              <% end %>
             </ul>
           </li>
         <% end %>
       </ul>
+      
     </nav>
     <!-- /.sidebar-menu -->
   </div>

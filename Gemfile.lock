@@ -396,6 +396,7 @@ GEM
 PLATFORMS
   arm64-darwin-20
   x86_64-darwin-19
+  x86_64-darwin-21
 
 DEPENDENCIES
   annotate
@@ -431,6 +432,7 @@ DEPENDENCIES
   rails (= 6.0.3)
   rails-controller-testing
   redcarpet (~> 3.5.1)
+  rexml
   rspec-parameterized
   rspec-rails
   rspec-retry
@@ -452,4 +454,4 @@ RUBY VERSION
    ruby 3.0.1p64
 
 BUNDLED WITH
-   2.3.5
+   2.3.10
