@@ -51,6 +51,7 @@ class TeamsController < ApplicationController
     return render :edit if current_user.id != @team.owner_id
     @team.update(owner_id: params[:user_id])
     if @team.save
+      AssignMailer.owner_assign_mail(@team.owner.email, @team).deliver
       redirect_to @team, notice: I18n.t('views.messages.owner_assign_success')
     else
       flash.now[:error] = I18n.t('views.messages.owner_assign_failed')
