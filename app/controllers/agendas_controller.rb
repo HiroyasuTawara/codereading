@@ -1,5 +1,5 @@
 class AgendasController < ApplicationController
-  before_action :permission_only_owner, only: %i[destroy]
+
 
 
   def index
@@ -24,7 +24,11 @@ class AgendasController < ApplicationController
 
   def destroy
     set_agenda
+    permission_only_owner
+    @emails = @agenda.team.users.pluck(:email)
+    @title = @agenda.title
     @agenda.destroy
+    AgendaMailer.deleat_mail(@emails, @agenda.title, current_user).deliver
     redirect_to dashboard_url, notice: 'アジェンダを削除しました'
   end
 
